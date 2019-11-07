@@ -1,45 +1,51 @@
-import tile
 import config
+import character
 
 import os
 import pygame
 import pytmx
 
-def load_tmx(filename, screen):
-    tmx_data = pytmx.TiledMap(os.path.join('maps', 'crime-scene.tmx'))
-    image = tmx_data.get_tile_image(0, 0, '10')
-    screen.blit(image, 0, 0)
-
 def run():
     pygame.init()
+    pygame.key.set_repeat(1, 1)
+
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((config.SCREEN_WIDTH, config.SCREEN_HEIGHT))
+    scene = pygame.image.load(os.path.join('maps', 'crime-scene.png'))
 
-    blood = tile.Tile(os.path.join('tile', 'data', 'blood.csv'), screen)
-    floor = tile.Tile(os.path.join('tile', 'data', 'carpet.csv'), screen)
-    furniture = tile.Tile(os.path.join('tile', 'data', 'furniture.csv'), screen)
-    kitchen = tile.Tile(os.path.join('tile', 'data', 'kitchen.csv'), screen)
-    table_items = tile.Tile(os.path.join('tile', 'data', 'table_items.csv'), screen)
-    wall_items = tile.Tile(os.path.join('tile', 'data', 'wall_items.csv'), screen)
-    walls_sides = tile.Tile(os.path.join('tile', 'data', 'walls_sides.csv'), screen)
-    walls = tile.Tile(os.path.join('tile', 'data', 'walls.csv'), screen)
+    sades = character.Character(
+        config.SADES['left_images'],
+        config.SADES['right_images'],
+        config.SADES['up_images'],
+        config.SADES['down_images'],
+        config.SADES['x'],
+        config.SADES['y'],
+        config.SADES['speed'],
+        config.SADES['boundaries_image_filename'],
+        screen
+    )
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 break
 
-        # floor.draw(0, 0)
-        # blood.draw(30, 0)
-        # furniture.draw(60, 0)
-        kitchen.draw(90, 0)
-        # table_items.draw(120, 0)
-        # wall_items.draw(150, 0)
-        # walls_sides.draw(180, 0)
-        # walls.draw(210, 0)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    sades.left()
+                if event.key == pygame.K_RIGHT:
+                    sades.right()
+                if event.key == pygame.K_UP:
+                    sades.up()
+                if event.key == pygame.K_DOWN:
+                    sades.down()
+
+        screen.blit(scene, (0, 0))
+
+        sades.draw()
 
         pygame.display.update()
-        clock.tick(12)
+        clock.tick(config.FPS)
 
 if __name__ == '__main__':
     run()
