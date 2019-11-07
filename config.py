@@ -1,2 +1,21 @@
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+import os
+
+SCREEN_WIDTH = 1200
+SCREEN_HEIGHT = 700
+
+CHARACTER_SIZE = 100
+
+FPS = 30
+
+SADES = {
+    'left_images': [os.path.join('character', 'images', 'sades', 'left-1.png'), os.path.join('character', 'images', 'sades', 'left-2.png'), os.path.join('character', 'images', 'sades', 'left-3.png')],
+    'right_images': [os.path.join('character', 'images', 'sades', 'right-1.png'), os.path.join('character', 'images', 'sades', 'right-2.png'), os.path.join('character', 'images', 'sades', 'right-3.png')],
+    'up_images': [os.path.join('character', 'images', 'sades', 'up-1.png'), os.path.join('character', 'images', 'sades', 'up-2.png'), os.path.join('character', 'images', 'sades', 'up-3.png')],
+    'down_images': [os.path.join('character', 'images', 'sades', 'down-1.png'), os.path.join('character', 'images', 'sades', 'down-2.png'), os.path.join('character', 'images', 'sades', 'down-3.png')],
+    'width': CHARACTER_SIZE, 
+    'height': CHARACTER_SIZE, 
+    'x': 40, 
+    'y': 310, 
+    'speed': 10,
+    'boundaries_image_filename': os.path.join('maps', 'crime-scene-boundaries.png')
+}
