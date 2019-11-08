@@ -1,9 +1,9 @@
 import config
 import character
+import util
 
 import os
 import pygame
-import pytmx
 
 def run():
     pygame.init()
@@ -22,7 +22,8 @@ def run():
         config.SADES['y'],
         config.SADES['speed'],
         config.SADES['boundaries_image_filename'],
-        screen
+        screen,
+        config.SADES['main_character']
     )
 
     while True:
@@ -40,8 +41,9 @@ def run():
                 if event.key == pygame.K_DOWN:
                     sades.down()
 
-        screen.blit(scene, (0, 0))
 
+        screen.fill([0, 0, 0])
+        screen.blit(scene, util.get_scene_coordinates(sades))
         sades.draw()
 
         pygame.display.update()
