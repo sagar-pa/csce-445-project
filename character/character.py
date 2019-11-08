@@ -19,7 +19,7 @@ class Coordinate:
 class Character:
     valid_locations = {}
 
-    def __init__(self, left_images, right_images, up_images, down_images, x, y, speed, boundaries_image_filename, screen):
+    def __init__(self, left_images, right_images, up_images, down_images, x, y, speed, boundaries_image_filename, screen, main_character):
         self.width = config.SADES['width']
         self.height = config.SADES['height']
 
@@ -32,6 +32,8 @@ class Character:
         right_images = [pygame.transform.scale(image, (self.width, self.height)) for image in right_images]
         up_images = [pygame.transform.scale(image, (self.width, self.height)) for image in up_images]
         down_images = [pygame.transform.scale(image, (self.width, self.height)) for image in down_images]
+
+        self.frames = len(left_images)
 
         self.images = {}
         self.add_images(self.images, 'left', left_images)
@@ -50,6 +52,8 @@ class Character:
         self.step = 0
 
         self.screen = screen
+
+        self.main_character = main_character
 
     @staticmethod
     def init_valid_locations(boundaries_image_filename):
@@ -75,16 +79,20 @@ class Character:
             images_dict[prefix + str(i)] = image
 
     def is_valid_location(self, x, y):
-        top_left_valid = Coordinate(x, y) in Character.valid_locations[self.boundaries_image_filename]
-        bottom_right_valid = Coordinate(x + self.width, y + self.height) in Character.valid_locations[self.boundaries_image_filename]
+        for i in range(x, x + self.width, self.width / 5):
+            for j in range(y, y + self.height, self.height / 5):
+                if Coordinate(i, j) not in Character.valid_locations[self.boundaries_image_filename]:
+                    return False
 
-        print x, y, x + self.width, y + self.height, top_left_valid, bottom_right_valid
-
-        return top_left_valid and bottom_right_valid
+        return True
 
     def draw(self):
-        self.step %= 3
-        self.screen.blit(self.images[self.direction + str(self.step)], (self.x, self.y))
+        self.step %= self.frames
+        if self.main_character:
+            center = ((config.SCREEN_WIDTH / 2) - (self.width / 2), (config.SCREEN_HEIGHT / 2) - (self.height / 2))
+            self.screen.blit(self.images[self.direction + str(self.step)], center)
+        else:
+            self.screen.blit(self.images[self.direction + str(self.step)], (self.x, self.y))
 
     def up(self):
         if self.is_valid_location(self.x, self.y - self.speed):
