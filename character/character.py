@@ -28,7 +28,7 @@ class Character:
     valid_locations = {}
     clue_locations = []
 
-    def __init__(self, id, left_images, right_images, up_images, down_images, x, y, speed, boundaries_image_filename, clues_image_filename, screen, main_character, clue_events=[]):
+    def __init__(self, id, left_images, right_images, up_images, down_images, x, y, speed, boundaries_image_filename, screen, main_character, clue_events=[]):
         self.id = id
 
         self.width = config.CHARACTER_WIDTH
@@ -57,7 +57,6 @@ class Character:
         self.speed = speed
 
         self.boundaries_image_filename = boundaries_image_filename
-        Character.init_valid_locations(boundaries_image_filename)
 
         self.direction = 'down'
         self.step = 0
@@ -114,9 +113,6 @@ class Character:
         return str(self)
 
     def is_clue_location(self, x, y):
-        print x, y
-        print Character.clue_locations
-
         for i in range(x, x + self.width, self.width / 5):
             for j in range(y, y + self.height, self.height / 5):
                 for clue_blob in Character.clue_locations:
