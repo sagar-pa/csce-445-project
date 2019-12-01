@@ -19,7 +19,7 @@ SADES = {
     'right_images': [os.path.join('character', 'images', 'sades', 'right-1.png'), os.path.join('character', 'images', 'sades', 'right-2.png'), os.path.join('character', 'images', 'sades', 'right-1.png'), os.path.join('character', 'images', 'sades', 'right-3.png')],
     'up_images': [os.path.join('character', 'images', 'sades', 'up-1.png'), os.path.join('character', 'images', 'sades', 'up-2.png'), os.path.join('character', 'images', 'sades', 'up-1.png'), os.path.join('character', 'images', 'sades', 'up-3.png')],
     'down_images': [os.path.join('character', 'images', 'sades', 'down-1.png'), os.path.join('character', 'images', 'sades', 'down-2.png'), os.path.join('character', 'images', 'sades', 'down-1.png'), os.path.join('character', 'images', 'sades', 'down-3.png')],
-    'x': 620, 
+    'x': 600, 
     'y': 1100, 
     'speed': 10,
     'boundaries_image_filename': os.path.join('maps', 'crime-scene-boundaries.png'),
@@ -39,4 +39,11 @@ REI = {
     'boundaries_image_filename': os.path.join('maps', 'crime-scene-boundaries.png'),
     'clues_image_filename': os.path.join('maps', 'crime-scene-clues.png'),
     'main_character': False
+}
+
+SCENES = {
+    'crime-scene': os.path.join('maps', 'crime-scene.png'),
+    'apartment': os.path.join('maps', 'apartment.png'),
+    'embassy': os.path.join('maps', 'embassy.png'),
+    'inn': os.path.join('maps', 'inn.png')
 }
