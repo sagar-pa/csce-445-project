@@ -106,7 +106,6 @@
                 "trigger": -1
             }
         ],
-        "teleport_to": [1260, 250],
         "text_only": true
     },
     {
@@ -229,6 +228,10 @@
             {
                 "text": "Yuki Kumamoto",
                 "trigger": 33
+            },
+            {
+                "text": "Done investigating.",
+                "trigger": 1000
             }
         ]
     },
@@ -252,5 +255,307 @@
         "text_only": true,
         "load_scene": "inn",
         "trigger": 34
+    },
+    {
+        "id": 34,
+        "dialogue": "You think of the reasons that Americans would want to stop the great country of Japan for.",
+        "text_only": true,
+        "trigger": 35
+    },
+    {
+        "id": 35,
+        "dialogue": "You: Ambassador Pike may be a little racist, and the world just seems tense at the moment.  Maybe he was ordered by his superiors to do something?",
+        "text_only": true,
+        "trigger": 36
+    },
+    {
+        "id": 35,
+        "dialogue": "You decide to investigate further by visiting him in the embassy.",
+        "text_only": true,
+        "trigger": 36
+    },
+    {
+        "id": 36,
+        "dialogue": "Regardless, you make your way to the United States Embassy in search of potential answers.",
+        "text_only": true,
+        "trigger": 37
+    },
+    {
+        "id": 37,
+        "dialogue": "You get asked why you're visiting the embassy.",
+        "text_only": true,
+        "trigger": 38
+    },
+    {
+        "id": 38,
+        "dialogue": "Front Desk Person: May I ask what your purpose is for visiting the United States Embassy?",
+        "text_only": true,
+        "options": [
+            {
+                "text": "Tell her that Jeremy is a suspect.",
+                "trigger": 39
+            },
+            {
+                "text": "Don't tell her that Jeremy is a suspect.",
+                "trigger": 45
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "dialogue": "You: My division and I have identified him as a potential suspect of the murder of the Japanese Ambassador. Could I ask a few questions to him?",
+        "text_only": true,
+        "trigger": 40
+    },
+    {
+        "id": 40,
+        "dialogue": "Front Desk Person immediately contacts Ambassador Pike.",
+        "text_only": true,
+        "trigger": 41
+    },
+    {
+        "id": 41,
+        "dialogue": "Front Desk Person: Yes. Please wait while I ask for him. She gets up, goes straight ahead, and takes a right.  10 seconds later, 20 American soldiers with guns storm out with the Front Desk Person behind them.",
+        "text_only": true,
+        "trigger": 42
+    },
+    {
+        "id": 42,
+        "dialogue": "You are told to leave the embassy.",
+        "text_only": true,
+        "trigger": 43
+    },
+    {
+        "id": 43,
+        "dialogue": "One of the soldiers: It appears that the Ambassador does not wish to speak to you. We will escort you out of the premises.",
+        "text_only": true,
+        "trigger": 44
+    },
+    {
+        "id": 44,
+        "dialogue": "Seeing the American soldiers waiting to escort you, you realize that you can't cause any more trouble. So, you leave the embassy and head back to the office.",
+        "text_only": true,
+        "trigger": 30
+    },
+    {
+        "id": 45,
+        "dialogue": "You: I'm just questioning all of the people who were at the Japanese Ambassador's party, and coming up with some initial conclusions. Could I speak to him?",
+        "text_only": true,
+        "trigger": 46
+    },
+    {
+        "id": 46,
+        "dialogue": "You are told to wait, he is currently in a meeting, you decide this might be a good time to investigate his office.",
+        "text_only": true,
+        "trigger": 47
+    },
+    {
+        "id": 47,
+        "dialogue": "Front Desk Person: He's currently in a meeting, but if you could wait, he will be out in a bit.",
+        "text_only": true,
+        "trigger": 48
+    },
+    {
+        "id": 48,
+        "dialogue": "You ask where the restroom is.",
+        "text_only": true,
+        "trigger": 49
+    },
+    {
+        "id": 49,
+        "dialogue": "You: I will wait. In the meantime, could you direct me to the restroom?",
+        "text_only": true,
+        "trigger": 50
+    },
+    {
+        "id": 50,
+        "dialogue": "She tells you where it is, and you go to start investigating.",
+        "text_only": true,
+        "trigger": 51
+    },
+    {
+        "id": 51,
+        "dialogue": "Front Desk Person: Yes. Just go straight ahead and take a left.  It will be on your right.  I'll let Ambassador Pike know of your visit.",
+        "text_only": true,
+        "trigger": 52
+    },
+    {
+        "id": 52,
+        "dialogue": "Investigate Crime Scene, 4 clues to collect.",
+        "teleport_to": [1420, 1430],
+        "text_only": false
+    },
+    {
+        "id": 53,
+        "dialogue": "You rush back to not raise suspiscion about your whereabouts.",
+        "text_only": true,
+        "trigger": 54,
+        "trigger_on_done": true,
+        "scene": "embassy"
+    },
+    {
+        "id": 54,
+        "dialogue": "You introduce yourself to Jeremy, and pretend you're here for witness questioning.",
+        "text_only": false,
+        "trigger": 56
+    },
+    {
+        "id": 56,
+        "dialogue": "You: Hello, Ambassador Pike. I'm Saito, the detective investigating the unfortunate Japanese Ambassador's death. I was just going through the list of the people who attended his party. Could I ask you some questions?",
+        "text_only": false,
+        "trigger": 57
+    },
+    {
+        "id": 57,
+        "dialogue": "Jeremy: Oh. He was a great man. Please send my condolences to his family. I'll try my best to be of help to you.",
+        "text_only": false,
+        "trigger": 63
+    },
+    {
+        "id": 58,
+        "dialogue": "He seems to be smiling and enjoying the Korean foreign minister's company. Is this an indication of collusion?",
+        "clue": [197, 95, 41, 100],
+        "clue_id": 5,
+        "text_only": false
+    },
+    {
+        "id": 59,
+        "dialogue": "A bunch of bottles are in a group on the table, and one stands out as the one the Japanese Ambassador was consuming.",
+        "clue": [480, 768, 48, 48],
+        "clue_id": 6,
+        "text_only": false
+    },
+    {
+        "id": 60,
+        "dialogue": "Decently secure vault, luckily you're an expert at these sorts of things and can probably open it with ease by looking at it from a different angle, but be careful -- you might get caught.",
+        "clue": [96, 150, 70, 90],
+        "clue_id": 7,
+        "text_only": false
+    },
+    {
+        "id": 61,
+        "dialogue": "Luckily, you're an expert of these sorts of things, and you manage to get into the vault, only to find diaries containing very personal information, none of which relating to the case.",
+        "clue": [166, 150, 20, 90],
+        "clue_id": 8,
+        "text_only": false,
+        "trigger": 62
+    },
+    {
+        "id": 62,
+        "dialogue": "You were spotted breaking into the vault, and you were imprisoned inside the embassy",
+        "trigger": 30,
+        "text_only": false
+    },
+    {
+        "id": 63,
+        "dialogue": "Select a question to ask Jeremy.",
+        "options": [
+            {
+                "text": "What was your relationship with him?",
+                "trigger": 65
+            },
+            {
+                "text": "Did you notice anything unusual while at the party?",
+                "trigger": 67
+            },
+            {
+                "text": "Did you have dealings with other foreign governments before going to the party?",
+                "trigger": 73
+            }
+        ],
+        "text_only": false
+    },
+    {
+        "id": 64,
+        "dialogue": "You: What was your relationship with him?",
+        "text_only": false,
+        "trigger": 68
+    },
+    {
+        "id": 65,
+        "dialogue": "Jeremy: Although we had political differences, we still respected each other.",
+        "text_only": false,
+        "trigger": 66
+    },
+    {
+        "id": 68,
+        "dialogue": "Jeremy: Although we had political differences, we still respected each other.",
+        "text_only": false,
+        "trigger": 70
+    },
+    {
+        "id": 66,
+        "dialogue": "You: Did you notice anything unusual while at the party?",
+        "text_only": false,
+        "trigger": 69
+    },
+    {
+        "id": 67,
+        "dialogue": "Jeremy: Nothing out of the ordinary. I was welcomed by the party when I got there, and left promptly when I felt needed.",
+        "text_only": false,
+        "trigger": 64
+    },
+    {
+        "id": 69,
+        "dialogue": "Jeremy: Nothing out of the ordinary. I was welcomed by the party when I got there, and left promptly when I felt needed.",
+        "text_only": false,
+        "trigger": 70
+    },
+    {
+        "id": 70,
+        "dialogue": "You: You seem to be a fan of the sake the ambassador enjoyed. Do you keep more in the vault?",
+        "text_only": false,
+        "clues_necessary": [6, 7],
+        "trigger": 71
+    },
+    {
+        "id": 71,
+        "dialogue": "Jeremy: It seems the purpose of your questions was different than the one you stated to Sarah. I'd like to remind you that Japanese investigations do not apply to me as the American Ambassador.",
+        "text_only": false,
+        "clues_necessary": [6, 7],
+        "trigger": 72
+    },
+    {
+        "id": 72,
+        "dialogue": "You: I'm sorry. It seems that I've overstepped my bounds.",
+        "text_only": false,
+        "clues_necessary": [6, 7],
+        "trigger": 76
+    },
+    {
+        "id": 73,
+        "dialogue": "You are told to leave the embassy.",
+        "text_only": false,
+        "trigger": 74
+    },
+    {
+        "id": 74,
+        "dialogue": "Jeremy: I'm sorry. I don't feel comfortable answering that or any further questions. Please leave the embassy before I need to ask the navy to escort you.",
+        "text_only": false,
+        "trigger": 75
+    },
+    {
+        "id": 75,
+        "dialogue": "Having seen the armed soldiers, you feel that it'd be unwise to stay any longer.",
+        "text_only": false,
+        "trigger": 30
+    },
+    {
+        "id": 76,
+        "dialogue": "You: That's all I need from you, thank you so much for your time. I hope you enjoy your stay in Japan.",
+        "text_only": false,
+        "trigger": 77
+    },
+    {
+        "id": 77,
+        "dialogue": "You leave the embassy.",
+        "text_only": true,
+        "trigger": 78
+    },
+    {
+        "id": 78,
+        "dialogue": "You: While it could be him, it'd be very convenient if it wasn't. I'm not even sure if pursuing him would be worth the effects of a degraded relationship with America.",
+        "text_only": true,
+        "trigger": 30
     }
 ]

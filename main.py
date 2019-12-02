@@ -98,13 +98,7 @@ def move_character(events, current_event, characters):
     return current_event
 
 def get_scene_name(event_id, events):
-    trigger_to_event = {event.trigger: event for event in events if event.trigger}
-
-    e = trigger_to_event[events[0].trigger]
-    while not e.load_scene:
-        e = trigger_to_event[e.id]
-
-    return e.load_scene
+    return get_profile()['scene_name']
 
 def get_done_collecting_clues_event(events, scene_name):
     for e in events:
@@ -137,6 +131,13 @@ def control_selection(key, events, current_event):
 
     return current_event
 
+def load_new_scene(current_event, events, characters):
+    scene_name = get_scene_name(current_event.id, events)
+    scene_image = pygame.image.load(config.SCENES[scene_name])
+    for c in characters:
+        c.boundaries_image_filename = config.SCENES[scene_name].replace('.png', '-boundaries.png')
+    return scene_name, scene_image
+
 def run():
     # setup pygame
     pygame.key.set_repeat(1, 1)
@@ -148,6 +149,8 @@ def run():
     profile = get_profile()
     events = event.Event.load_events(os.path.join('event', 'events.json'))
     current_event = get_event_with_id(events, profile['current_event'])
+    prev_event = None
+    frames = 0
     clues_collected = profile['clues_collected']
 
     # setup characters
@@ -156,11 +159,7 @@ def run():
     characters = [sades, rei]
     main_character = [c for c in characters if c.main_character == True][0]
 
-    # setup scene
-    scene_name = get_scene_name(current_event, events)
-    scene_image = pygame.image.load(config.SCENES[scene_name])
-    for c in characters:
-        c.boundaries_image_filename = config.SCENES[scene_name].replace('.png', '-boundaries.png')
+    scene_name, scene_image = load_new_scene(current_event, events, characters)
 
     # setup boundaries
     create_boundaries()
@@ -175,6 +174,10 @@ def run():
             for e in pygame.event.get():
                 if e.type == pygame.KEYDOWN:
                     if current_event:
+                        # half a second must pass before input is received again
+                        if frames < (config.FPS / 2):
+                            break
+
                         # text-based selection
                         if current_event.options:
                             current_event = control_selection(e.key, events, current_event)
@@ -203,12 +206,10 @@ def run():
         # don't draw characters on top of each other
         characters.sort(key=operator.attrgetter('y'))
 
-        # draw characters
-        for c in characters:
-            if c.main_character:
-                c.draw()
-            else:
-                c.draw(main_character.get_relative_coordinates(c.x, c.y))
+        sades.draw()
+        
+        if scene_name == 'crime-scene':
+            rei.draw()
 
         # draw text box
         pygame.draw.rect(
@@ -231,6 +232,20 @@ def run():
                 screen.fill([255, 255, 255])
 
             current_event.blit_dialogue(top=current_event.text_only)
+
+        if current_event and current_event.load_scene:
+            scene_name = current_event.load_scene
+            _, scene_image = load_new_scene(current_event, events, characters)
+
+        if current_event and current_event.teleport_to:
+            sades.x, sades.y = current_event.teleport_to
+
+        if prev_event != current_event:
+            frames = 0
+        else:
+            frames += 1
+
+        prev_event = current_event
 
         pygame.display.update()
         clock.tick(config.FPS)

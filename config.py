@@ -29,10 +29,11 @@ SADES = {
 
 REI = {
     'id': 2,
-    'left_images': [os.path.join('character', 'images', 'rei.png')],
-    'right_images': [os.path.join('character', 'images', 'rei.png')],
-    'up_images': [os.path.join('character', 'images', 'rei.png')],
-    'down_images': [os.path.join('character', 'images', 'rei.png')],
+    'left_images': [os.path.join('character', 'images', 'rei', 'left-1.png'), os.path.join('character', 'images', 'rei', 'left-2.png'), os.path.join('character', 'images', 'rei', 'left-1.png'), os.path.join('character', 'images', 'rei', 'left-3.png')],
+    'right_images': [os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-2.png'), os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-3.png')],
+    'up_images': [os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-2.png'), os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-3.png')],
+    # 'up_images': [os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-2.png'), os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-3.png')],
+    'down_images': [os.path.join('character', 'images', 'rei', 'down-1.png'), os.path.join('character', 'images', 'rei', 'down-2.png'), os.path.join('character', 'images', 'rei', 'down-1.png'), os.path.join('character', 'images', 'rei', 'down-3.png')],
     'x': 620,
     'y': 890,
     'speed': 10,
