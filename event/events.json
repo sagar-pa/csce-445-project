@@ -806,5 +806,337 @@
         "trigger": 30,
         "text_only": false,
         "dialogue": "You leave the Inn."
+    },
+    {
+        "id": 115,
+        "text_only": true,
+        "dialogue": "Why would a fellow countryman harm the ambassador that represents it?",
+        "trigger": 116
+    },
+    {
+        "id": 116,
+        "text_only": true,
+        "dialogue": "You'd like to believe that you're just questioning Hashida for the sake of formality, and nothing else. After all, whatever his behavior, why would he harm a fellow Japanese?",
+        "trigger": 117
+    },
+    {
+        "id": 117,
+        "text_only": true,
+        "dialogue": "You decide to investigate further by visiting him at his apartment.",
+        "trigger": 118
+    },
+    {
+        "id": 118,
+        "text_only": true,
+        "dialogue": "You make your way to fulfill the formality you know you ought to.",
+        "trigger": 119
+    },
+    {
+        "id": 119,
+        "text_only": false,
+        "dialogue": "You get asked why you're visiting the embassy.",
+        "trigger": 120,
+        "teleport_to": [290, 1340]
+    },
+    {
+        "id": 120,
+        "text_only": false,
+        "dialogue": "Hashida: I wasn't expecting anyone. Who are you?",
+        "trigger": 121
+    },
+    {
+        "id": 121,
+        "text_only": false,
+        "dialogue": "Choose to say",
+        "options": [
+            {
+                "text": "you're collecting evidence against the American Ambassador",
+                "trigger": 125
+            },
+            {
+                "text": "you're just questioning",
+                "trigger": 122
+            }
+        ]
+    },
+    {
+        "id": 122,
+        "text_only": false,
+        "dialogue": "I'm just questioning all of the people who were at the Japanese Ambassador's party, to fully investigate his death. Can I speak to you?",
+        "trigger": 123
+    },
+    {
+        "id": 123,
+        "text_only": false,
+        "dialogue": "Hashida: I have some plans I need to attend to. Now, please leave my apartment.",
+        "trigger": 124
+    },
+    {
+        "id": 124,
+        "text_only": false,
+        "dialogue": "You are almost suspicious of him, but you still can't just barge into his residence without orders. Therefore, you go back.",
+        "trigger": 30
+    },
+    {
+        "id": 125,
+        "text_only": false,
+        "dialogue": "I'm just questioning all of the people who were at the Japanese Ambassador's party to collect evidence against the American ambassador.",
+        "trigger": 126
+    },
+    {
+        "id": 126,
+        "text_only": false,
+        "dialogue": "You are told to wait by his room while he finishes some business.",
+        "trigger": 127
+    },
+    {
+        "id": 127,
+        "text_only": false,
+        "dialogue": "Hashida: Let me get my job done first. You wait by my room.",
+        "trigger": 128
+    },
+    {
+        "id": 128,
+        "text_only": true,
+        "dialogue": "Following his lead, you go to his room. He leaves, promising to be back shortly.",
+        "trigger": 129,
+        "teleport_to": [100, 700]
+    },
+    {
+        "id": 129,
+        "text_only": false,
+        "dialogue": "Investigate Crime Scene, 5 clues to collect."
+    },    
+    {
+        "id": 131,
+        "dialogue": "He seems to be smiling and overjoyed with the empire's victory in Manchuria.",
+        "clue": [146, 93, 41, 103],
+        "clue_id": 13,
+        "text_only": false
+    },
+    {
+        "id": 132,
+        "dialogue": "Russian sniper rifles and bullets weren't something anyone except the highest leaders in the Navy could afford. How could he have gotten a hold of them?",
+        "clue": [478, 379, 85, 93],
+        "clue_id": 14,
+        "text_only": false
+    },
+    {
+        "id": 133,
+        "dialogue": "It was from the 'Japan National Group', and from a quick glance, seemed to detail a plan for the next meeting.",
+        "clue": [64, 310, 36, 28],
+        "clue_id": 15,
+        "text_only": false
+    },
+    {
+        "id": 134,
+        "dialogue": "The apartment was in one of the best neighborhoods of the city, and seemed to be well maintained. What would Hashida need rat poison for?",
+        "clue": [47, 132, 51, 39],
+        "clue_id": 16,
+        "text_only": false
+    },
+    {
+        "id": 135,
+        "dialogue": "Despite being a recruit, it appears he has deep connections to the leaders of the navy. Could he be part of a bigger conspiracy?",
+        "clue": [240, 1194, 45, 48],
+        "clue_id": 17,
+        "text_only": false
+    },
+    {
+        "id": 136,
+        "dialogue": "You rush back to not raise suspiscion about your whereabouts.",
+        "text_only": true,
+        "teleport_to": [290, 1340],
+        "trigger_on_done": true,
+        "scene": "apartment",
+        "trigger": 137
+    },
+    {
+        "id": 137,
+        "text_only": false,
+        "dialogue": "Hashida: I'm back. What do you need to convict him?",
+        "trigger": 138
+    },
+    {
+        "id": 138,
+        "text_only": false,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 139
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 140
+            }
+        ],
+        "dialogue": "You: What is your role in the navy?"
+    },
+    {
+        "id": 139,
+        "text_only": false,
+        "dialogue": "Hashida: I'm just a recruit, but I'm very loyal to the empire and have connection to the leaders.",
+        "trigger": 140
+    },
+    {
+        "id": 140,
+        "text_only": false,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 141
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 142
+            }
+        ],
+        "dialogue": "You: Have you had any contact with the American Ambassador besides at the party?"
+    },
+    {
+        "id": 141,
+        "text_only": false,
+        "dialogue": "Hashida: I've met him a few times as part of the navy. But, I didn't get to see much past his malicious intentions against the empire.",
+        "trigger": 142
+    },
+    {
+        "id": 142,
+        "text_only": false,
+        "clues_necessary": [13, 17],
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 143
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 144
+            }
+        ],
+        "dialogue": "You: How are your relations with the commander general of the Navy?"
+    },
+    {
+        "id": 143,
+        "text_only": false,
+        "clues_necessary": [13, 17],
+        "dialogue": "Hashida: He's a very close friend and a good ally of the empire.",
+        "trigger": 144
+    },
+    {
+        "id": 144,
+        "text_only": false,
+        "clues_necessary": [13, 14, 16],
+        "dialogue": "Not actually knowing of which exact poison, you ask: So we found out that he was poisoned with rat poison. It's likely that the Ambassador sneaked it in with his alcohol.?",
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 145
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 146
+            }
+        ]
+    },
+    {
+        "id": 145,
+        "text_only": false,
+        "clues_necessary": [13, 14, 16],
+        "dialogue": "Hashida: What a terrible person. Doing that at a party. I noticed he was awfully close to the Ambassador while I was with him in the beginning.",
+        "trigger": 146
+        
+    },
+    {
+        "id": 146,
+        "clues_necessary": [12],
+        "text_only": false,
+        "dialogue": "You: I've noticed that the American Ambassador left parts of his plans at Yuki's.",
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 147
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 148
+            }
+        ]
+    },
+    {
+        "id": 147,
+        "clues_necessary": [12],
+        "text_only": false,
+        "dialogue": "Hashida: Oh. The ambassador's connections with China sure would've been problematic in the American's eyes.",
+        "trigger": 148
+    },
+    {
+        "id": 148,
+        "clues_necessary": [1, 3, 4],
+        "text_only": false,
+        "dialogue": "You: Have you noticed anything in particular as the first person at the party?",
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 149
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 150
+            }
+        ]
+    },
+    {
+        "id": 149,
+        "clues_necessary": [1, 3, 4],
+        "text_only": false,
+        "dialogue": "Hashida: I didn't see anyone special the  American Ambassador with his large coat.",
+        "trigger": 150
+    },
+    {
+        "id": 150,
+        "clues_necessary": [15],
+        "text_only": false,
+        "dialogue": "You: What is your relation with the Japan national group (the name of the secret society)?",
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 151
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 153
+            }
+        ]
+    },
+    {
+        "id": 151,
+        "clues_necessary": [15],
+        "text_only": false,
+        "dialogue": "Hashida: You shouldn't know about that.",
+        "trigger": 152
+    },
+    {
+        "id": 152,
+        "text_only": true,
+        "dialogue": "Hashida whips out a gun, and he kills you.",
+        "trigger": 30
+    },
+    {
+        "id": 153,
+        "text_only": false,
+        "dialogue": "You thank him.",
+        "trigger": 154
+    },
+    {
+        "id": 154,
+        "text_only": false,
+        "dialogue": "That's all I need from you. Thank you for your help into the American Ambassador.",
+        "trigger": 155
+    },
+    {
+        "id": 155,
+        "text_only": false,
+        "dialogue": "You leave his apartment.",
+        "trigger": 30
     }
 ]
