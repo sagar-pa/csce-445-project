@@ -218,10 +218,6 @@
         "text_only": true,
         "options": [
             {
-                "text": "Hashida Makoto",
-                "trigger": 31
-            },
-            {
                 "text": "Jeremy Pike",
                 "trigger": 32
             },
@@ -230,8 +226,12 @@
                 "trigger": 33
             },
             {
+                "text": "Hashida Makoto",
+                "trigger": 31
+            },
+            {
                 "text": "Done investigating.",
-                "trigger": 1000
+                "trigger": 156
             }
         ]
     },
@@ -240,7 +240,7 @@
         "dialogue": "Rei: Let's see the matter through.",
         "text_only": true,
         "load_scene": "apartment",
-        "trigger": 34
+        "trigger": 115
     },
     {
         "id": 32,
@@ -520,9 +520,18 @@
     {
         "id": 70,
         "dialogue": "You: You seem to be a fan of the sake the ambassador enjoyed. Do you keep more in the vault?",
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 71
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 76
+            }
+        ],
         "text_only": false,
-        "clues_necessary": [6, 7],
-        "trigger": 71
+        "clues_necessary": [6, 7]
     },
     {
         "id": 71,
@@ -713,7 +722,16 @@
     },
     {
         "id": 100,
-        "trigger": 101,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 101
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 102
+            }
+        ],
         "text_only": false,
         "dialogue": "You: How have your relatives been (in China)?"
     },
@@ -725,7 +743,16 @@
     },
     {
         "id": 102,
-        "trigger": 103,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 103
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 104
+            }
+        ],
         "text_only": false,
         "dialogue": "You: How involved were you with the Ambassador's politics?"
     },
@@ -737,7 +764,16 @@
     },
     {
         "id": 104,
-        "trigger": 105,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 105
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 106
+            }
+        ],
         "clues_necessary": [9, 11, 12],
         "text_only": false,
         "dialogue": "You: Any political power you doubt that played this?"
@@ -745,13 +781,21 @@
     {
         "id": 105,
         "trigger": 106,
-        "clues_necessary": [9, 11, 12],
         "text_only": false,
         "dialogue": "Yuki: The Americans seem to have grown tensions with the Japanese government it seems from their recent condemnation of Japanese expansion. "
     },
     {
         "id": 106,
-        "trigger": 107,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 107
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 108
+            }
+        ],
         "text_only": false,
         "dialogue": "You: Did you notice someone unusually close to the Ambassador at the party?"
     },
@@ -764,27 +808,43 @@
     {
         "id": 108,
         "clues_necessary": [9, 11],
-        "trigger": 109,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 109
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 110
+            }
+        ],
         "text_only": false,
         "dialogue": "You: Any particular guests that seemed involved?"
     },
     {
         "id": 109,
-        "clues_necessary": [9, 11],
         "trigger": 110,
         "text_only": false,
         "dialogue": "Yuki: I'm sorry. I can't disclose any information about my guests."
     },
     {
         "id": 110,
+        "options": [
+            {
+                "text": "Ask the question.",
+                "trigger": 111
+            },
+            {
+                "text": "Don't ask the question.",
+                "trigger": 112
+            }
+        ],
         "clues_necessary": [9, 11, 12],
-        "trigger": 111,
         "text_only": false,
         "dialogue": "You: You were one of the few early at the party. Do you remember how things progressed in the beginning?"
     },
     {
         "id": 111,
-        "clues_necessary": [9, 11, 12],
         "trigger": 112,
         "text_only": false,
         "dialogue": "Yuki: In the beginning it was mostly just the ambassador conversing with Rei and Hashida about political matters. I bothered not to join them."
@@ -1138,5 +1198,120 @@
         "text_only": false,
         "dialogue": "You leave his apartment.",
         "trigger": 30
+    },
+    {
+        "id": 156,
+        "text_only": true,
+        "dialogue": "Regardless of the decision I make, I know that Japan will hold the criminal accountable.",
+        "trigger": 157
+    },
+    {
+        "id": 157,
+        "text_only": true,
+        "dialogue": "Not only the criminal, this will likely also result in sanctions and war. I must choose with deliberation.",
+        "trigger": 158
+    },
+    {
+        "id": 158,
+        "text_only": true,
+        "dialogue": "Choose who you think the criminal is.",
+        "options": [
+            {
+                "text": "Jeremy Pike",
+                "trigger": 159
+            },
+            {
+                "text": "Yuki Kumamoto",
+                "trigger": 163
+            },
+            {
+                "text": "Hashida Makoto",
+                "trigger": 167
+            }
+        ]
+    },
+    {
+        "id": 159,
+        "text_only": true,
+        "dialogue": "Hashida is arrested and tried.",
+        "trigger": 160
+    },
+    {
+        "id": 160,
+        "text_only": true,
+        "dialogue": "While under questioning, Hashida confessed to the assassination, and more.",
+        "trigger": 161
+    },
+    {
+        "id": 161,
+        "text_only": true,
+        "dialogue": "It turns out the trial actually uncovered a line of high level navy officials who planned the assassination, and were involved in executing it.",
+        "trigger": 162
+    },
+    {
+        "id": 162,
+        "text_only": true,
+        "dialogue": "Good work, detective.",
+        "game_over": true
+    },
+    {
+        "id": 163,
+        "text_only": true,
+        "dialogue": "While under an arrest warrant, Jeremy cannot be arrested or tried until America lets him go off his duties as the Ambassador.",
+        "trigger": 164
+    },
+    {
+        "id": 164,
+        "text_only": true,
+        "dialogue": "You wait set guard around the American Embassy, and wait for Jeremy to come out.",
+        "trigger": 165
+    },
+    {
+        "id": 165,
+        "text_only": true,
+        "dialogue": "However, while you're waiting for him, Rei hurries in to report another high level official poisoned in a similar manner.",
+        "trigger": 166
+    },
+    {
+        "id": 166,
+        "text_only": true,
+        "dialogue": "It seems that Jeremy wasn't the culprit.",
+        "game_over": true
+    },
+    {
+        "id": 167,
+        "text_only": true,
+        "dialogue": "Yuki is arrested and tried.",
+        "trigger": 168
+    },
+    {
+        "id": 168,
+        "text_only": true,
+        "dialogue": "Despite your respect for Japan, Yuki clearly didn't face a fair trial. She was convicted in less than 5 hours, and sentenced to death.",
+        "trigger": 169
+    },
+    {
+        "id": 169,
+        "text_only": true,
+        "dialogue": "After the trial concludes, Hashida invites you to his apartment.",
+        "trigger": 170
+    },
+    {
+        "id": 170,
+        "text_only": true,
+        "dialogue": "Reaching there, you knock on the door, and go in after realizing it's open.",
+        "trigger": 171
+    },
+    {
+        "id": 171,
+        "text_only": true,
+        "dialogue": "However, when you see Hashida pointing a gun at you, you realize that you made a mistake.",
+        "trigger": 172
+    },
+    {
+        "id": 171,
+        "text_only": true,
+        "dialogue": "Hashida shoots and kills you.",
+        "game_over": true
     }
 ]

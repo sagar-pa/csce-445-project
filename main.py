@@ -230,13 +230,16 @@ def run():
 
             current_event.blit_dialogue(top=current_event.text_only)
 
-        if current_event and current_event.load_scene and scene_name != current_event.load_scene:
-            scene_name = current_event.load_scene
-            scene_image = load_new_scene(scene_name, characters)
+            if current_event.load_scene and scene_name != current_event.load_scene:
+                scene_name = current_event.load_scene
+                scene_image = load_new_scene(scene_name, characters)
 
-        if current_event and current_event.teleport_to:
-            sades.x, sades.y = current_event.teleport_to
-            sades.direction = 'up'
+            if current_event.teleport_to:
+                sades.x, sades.y = current_event.teleport_to
+                sades.direction = 'up'
+
+            if current_event.game_over:
+                save_and_exit(current_event, clues_collected)
 
         if prev_event != current_event:
             frames = 0

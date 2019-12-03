@@ -32,7 +32,8 @@ class Event:
             load_scene=event_dict.get('load_scene', None),
             clues_necessary=event_dict.get('clues_necessary', []),
             scene=event_dict.get('scene', None),
-            clue_id=event_dict.get('clue_id', None)
+            clue_id=event_dict.get('clue_id', None),
+            game_over=event_dict.get('game_over', False)
         )
 
     @staticmethod
@@ -48,7 +49,7 @@ class Event:
 
         return events
 
-    def __init__(self, id, dialogue, text_only, character_id=None, hint=None, trigger=None, movements=None, options=[], clue=None, teleport_to=None, trigger_on_done=None, load_scene=None, clues_necessary=[], scene=None, clue_id=None):
+    def __init__(self, id, dialogue, text_only, character_id=None, hint=None, trigger=None, movements=None, options=[], clue=None, teleport_to=None, trigger_on_done=None, load_scene=None, clues_necessary=[], scene=None, clue_id=None, game_over=False):
         """ Character should be included if a character is saying the dialogue.
             Hint should be included if interacting with a hint triggers the
             dialogue. Event should be given if this event always occurs after 
@@ -71,6 +72,7 @@ class Event:
         self.clues_necessary = clues_necessary
         self.scene = scene
         self.clue_id = clue_id
+        self.game_over = game_over
 
     def __hash__(self):
         return hash(id)
