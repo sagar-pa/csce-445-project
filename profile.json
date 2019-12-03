@@ -1,5 +1,5 @@
 {
-    "scene_name": "embassy",
-    "current_event": 30,
-    "clues_collected": []
+    "scene_name": "crime-scene", 
+    "clues_collected": [], 
+    "current_event_id": 0
 }
