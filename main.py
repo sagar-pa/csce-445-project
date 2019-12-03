@@ -104,9 +104,9 @@ def get_done_collecting_clues_event(events, scene_name):
 
     return None
 
-def control_sades(key, sades):
+def control_sades(key, sades, scene_name):
     if key == pygame.K_RETURN:
-        return sades.interact()
+        return sades.interact(scene_name)
     elif key == pygame.K_LEFT:
         sades.left()
     elif key == pygame.K_RIGHT:
@@ -186,7 +186,11 @@ def run():
                                 current_event = get_event_with_id(events, current_event.trigger)
 
                     else:
-                        current_event = control_sades(e.key, sades)
+                        # a fourth of a second must pass before input is received again
+                        if frames < (config.FPS / 4):
+                            break
+
+                        current_event = control_sades(e.key, sades, scene_name)
 
                         if current_event and current_event.clue_id:
                             clues_collected.append(current_event.clue_id)

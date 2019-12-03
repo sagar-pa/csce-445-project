@@ -1,3 +1,6 @@
+import os
+import json
+
 import pygame
 from PIL import Image
 import config
@@ -24,9 +27,15 @@ class Coordinate:
     def __repr__(self):
         return '({}, {})'.format(self.x, self.y)
 
+class Clue:
+    def __init__(self, clue_blob, clue_id, clue_scene):
+        self.clue_blob = clue_blob
+        self.clue_id = clue_id
+        self.clue_scene = clue_scene
+
 class Character:
     valid_locations = {}
-    clue_locations = []
+    clues = []
 
     def __init__(self, id, left_images, right_images, up_images, down_images, x, y, speed, boundaries_image_filename, screen, main_character, clue_events=[]):
         self.id = id
@@ -67,7 +76,7 @@ class Character:
 
         self.clue_events = clue_events
 
-        Character.init_clue_locations([clue_event.clue for clue_event in self.clue_events])
+        Character.init_clues([(clue_event.clue, clue_event.clue_id) for clue_event in self.clue_events])
 
     @staticmethod
     def get_locations_with_color(image_filename, color):
@@ -93,15 +102,27 @@ class Character:
         Character.valid_locations[boundaries_image_filename] = set(Character.get_locations_with_color(boundaries_image_filename, [255, 255, 255]))
    
     @staticmethod
-    def init_clue_locations(clue_rectangles):
-        for clue_rectangle in clue_rectangles:
+    def init_clues(clue_rectangles_and_clue_ids):
+        for clue_rectangle, clue_id in clue_rectangles_and_clue_ids:
             locations = set()
 
             for i in range(clue_rectangle[0], clue_rectangle[0] + clue_rectangle[2]):
                 for j in range(clue_rectangle[1], clue_rectangle[1] + clue_rectangle[3]):
                     locations.add(Coordinate(i, j))
 
-            Character.clue_locations.append(locations)
+            Character.clues.append(Clue(locations, clue_id, Character.get_scene(clue_id)))
+
+    @staticmethod
+    def get_scene(clue_id):
+        parent_directory = os.getcwd()
+
+        with open(os.path.join(parent_directory, 'clues', 'clue_scenes.json'), 'r') as f:
+            scene_to_clue_dict = json.load(f)
+
+        for scene in scene_to_clue_dict:
+            if any(clue_id == i for i in scene_to_clue_dict[scene]):
+                print scene
+                return scene
 
     def __eq__(self, other):
         return self.id == other.id
@@ -112,16 +133,17 @@ class Character:
     def __repr__(self):
         return str(self)
 
-    def is_clue_location(self, x, y):
+    def is_clue_location(self, x, y, scene_name):
         for i in range(x, x + self.width, self.width / 5):
             for j in range(y, y + self.height, self.height / 5):
-                for clue_blob in Character.clue_locations:
-                    if Coordinate(i, j) in clue_blob:
-                        return clue_blob
+                for clue in Character.clues:
+                    if Coordinate(i, j) in clue.clue_blob and scene_name == clue.clue_scene:
+                        print clue.clue_id, clue.clue_scene
+                        return clue.clue_id
 
         return None
 
-    def interact(self):
+    def interact(self, scene_name):
         y_offset = 0
         x_offset = 0
 
@@ -138,11 +160,11 @@ class Character:
             x_offset = -10
             y_offset = self.height / 2
 
-        clue_blob = self.is_clue_location(self.x + x_offset, self.y + y_offset)
+        clue_id = self.is_clue_location(self.x + x_offset, self.y + y_offset, scene_name)
 
-        if clue_blob:
+        if clue_id:
             for clue_event in self.clue_events:
-                if Coordinate(clue_event.clue[0], clue_event.clue[1]) in clue_blob:
+                if clue_event.clue_id == clue_id:
                     return clue_event
 
         return None
