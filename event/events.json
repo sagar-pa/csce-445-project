@@ -995,7 +995,7 @@
     {
         "id": 134,
         "dialogue": "The apartment was in one of the best neighborhoods of the city, and seemed to be well maintained. What would Hashida need rat poison for?",
-        "clue": [47, 132, 51, 39],
+        "clue": [47, 132, 53, 71],
         "clue_id": 16,
         "text_only": false
     },
