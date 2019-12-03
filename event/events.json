@@ -1073,7 +1073,8 @@
                 "trigger": 144
             }
         ],
-        "dialogue": "You: How are your relations with the commander general of the Navy?"
+        "dialogue": "You: How are your relations with the commander general of the Navy?",
+        "trigger": 144
     },
     {
         "id": 143,
@@ -1096,7 +1097,8 @@
                 "text": "Don't ask the question.",
                 "trigger": 146
             }
-        ]
+        ],
+        "trigger": 146
     },
     {
         "id": 145,
@@ -1120,7 +1122,8 @@
                 "text": "Don't ask the question.",
                 "trigger": 148
             }
-        ]
+        ],
+        "trigger": 148
     },
     {
         "id": 147,
@@ -1143,7 +1146,8 @@
                 "text": "Don't ask the question.",
                 "trigger": 150
             }
-        ]
+        ],
+        "trigger": 150
     },
     {
         "id": 149,
@@ -1166,7 +1170,8 @@
                 "text": "Don't ask the question.",
                 "trigger": 153
             }
-        ]
+        ],
+        "trigger": 153
     },
     {
         "id": 151,
