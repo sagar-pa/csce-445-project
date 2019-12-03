@@ -1,0 +1,53 @@
+[
+    [
+        "crime-scene", "dead-ambassador.png"
+    ],
+    [
+        "crime-scene", "maid.png"
+    ],
+    [
+        "crime-scene", "lock.png"
+    ],
+    [
+        "crime-scene", "inn-employee.png"
+    ],
+    [
+        "embassy", "handshake-picture.png"
+    ],
+    [
+        "embassy", "bottles-of-sake.png"
+    ],
+    [
+        "embassy", "vault.png"
+    ],
+    [
+        "embassy", "diaries.png"
+    ],
+    [
+        "inn", "chinese-pottery.png"
+    ],
+    [
+        "inn", "chest-with-telegram.png"
+    ],
+    [
+        "inn", "guest-list.png"
+    ],
+    [
+        "inn", "politician-list.png"
+    ],
+    [
+        "apartment", "manchuria-picture.png"
+    ],
+    [
+        "apartment", "guns.png"
+    ],
+    [
+        "apartment", "letter.png"
+    ],
+    [
+        "apartment", "poison.png"
+    ],
+    [
+        "apartment", "navy-officials-picture.png"
+    ]
+]

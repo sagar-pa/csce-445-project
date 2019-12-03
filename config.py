@@ -11,6 +11,11 @@ FONT_SIZE = 20
 CHARACTER_WIDTH = 32
 CHARACTER_HEIGHT = 46
 
+NUMBER_OF_CLUES = 17
+
+CLUE_WIDTH = SCREEN_WIDTH / NUMBER_OF_CLUES / 2
+CLUE_HEIGHT = CLUE_WIDTH
+
 FPS = 15
 
 SADES = {
@@ -31,8 +36,7 @@ REI = {
     'id': 2,
     'left_images': [os.path.join('character', 'images', 'rei', 'left-1.png'), os.path.join('character', 'images', 'rei', 'left-2.png'), os.path.join('character', 'images', 'rei', 'left-1.png'), os.path.join('character', 'images', 'rei', 'left-3.png')],
     'right_images': [os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-2.png'), os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-3.png')],
-    'up_images': [os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-2.png'), os.path.join('character', 'images', 'rei', 'right-1.png'), os.path.join('character', 'images', 'rei', 'right-3.png')],
-    # 'up_images': [os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-2.png'), os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-3.png')],
+    'up_images': [os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-2.png'), os.path.join('character', 'images', 'rei', 'up-1.png'), os.path.join('character', 'images', 'rei', 'up-3.png')],
     'down_images': [os.path.join('character', 'images', 'rei', 'down-1.png'), os.path.join('character', 'images', 'rei', 'down-2.png'), os.path.join('character', 'images', 'rei', 'down-1.png'), os.path.join('character', 'images', 'rei', 'down-3.png')],
     'x': 620,
     'y': 890,

@@ -10,14 +10,15 @@ import config
 import character
 import event
 
-def save_and_exit(current_event, clues_collected):
+def save_and_exit(current_event, clues_collected, scene_name):
     profile = {
         "current_event_id": current_event.id,
-        "clues_collected": clues_collected
+        "clues_collected": clues_collected,
+        "scene_name": scene_name
     }
 
     with open('profile.json', 'w') as f:
-        json.dump(profile, f)
+        json.dump(profile, f, indent=4)
 
     pygame.display.quit()
     pygame.quit()
@@ -59,6 +60,29 @@ def get_profile():
         j = json.load(f)
 
     return j
+
+def get_clue_file_locations():
+    with open(os.path.join('clues', 'clue_files.json')) as f:
+        j = json.load(f)
+
+    file_locations = []
+
+    for directory, filename in j:
+        file_locations.append(os.path.join('clues', directory, filename))
+
+    return file_locations
+
+def get_clue_images():
+    file_locations = get_clue_file_locations()
+
+    images = []
+
+    for file_location in file_locations:
+        image = pygame.image.load(file_location)
+        image = pygame.transform.scale(image, (config.CLUE_WIDTH, config.CLUE_HEIGHT))
+        images.append(image)
+
+    return images
 
 def create_boundaries():
     for scene_image_filename in config.SCENES.values():
@@ -144,7 +168,8 @@ def run():
     # setup current state
     profile = get_profile()
     events = event.Event.load_events(os.path.join('event', 'events.json'))
-    current_event = get_event_with_id(events, profile['current_event'])
+    current_event = get_event_with_id(events, profile['current_event_id'])
+    most_recent_event = current_event
     prev_event = None
     frames = 0
     clues_collected = profile['clues_collected']
@@ -157,6 +182,8 @@ def run():
 
     scene_name = profile['scene_name']
     scene_image = load_new_scene(scene_name, characters)
+
+    clue_images = get_clue_images()
 
     # setup boundaries
     create_boundaries()
@@ -199,7 +226,7 @@ def run():
                             current_event = get_done_collecting_clues_event(events, scene_name)
 
                 elif e.type == pygame.QUIT:
-                    save_and_exit(current_event.id, clues_collected)
+                    save_and_exit(most_recent_event, clues_collected, scene_name)
                         
         # blit the scene
         screen.blit(scene_image, main_character.get_relative_coordinates(0, 0))
@@ -210,7 +237,7 @@ def run():
         sades.draw()
         
         if scene_name == 'crime-scene':
-            rei.draw()
+            rei.draw(sades.get_relative_coordinates(rei.x, rei.y))
 
         # draw text box
         pygame.draw.rect(
@@ -226,6 +253,13 @@ def run():
             [config.SCREEN_WIDTH - config.TEXT_BOX_WIDTH, config.SCREEN_HEIGHT - config.TEXT_BOX_HEIGHT, config.TEXT_BOX_WIDTH, config.TEXT_BOX_HEIGHT],
             2
         )
+
+        # blit clues
+        offset = config.SCREEN_WIDTH - (config.CLUE_WIDTH * config.NUMBER_OF_CLUES)
+        pygame.draw.rect(screen, [255, 255, 255], [offset, 0, config.SCREEN_WIDTH, config.CLUE_HEIGHT])
+        for i in range(config.NUMBER_OF_CLUES):
+            if i + 1 in clues_collected:
+                screen.blit(clue_images[i], (offset + i * config.CLUE_WIDTH, 0))
 
         # blit text
         if current_event:
@@ -243,7 +277,9 @@ def run():
                 sades.direction = 'up'
 
             if current_event.game_over:
-                save_and_exit(current_event, clues_collected)
+                save_and_exit(current_event, clues_collected, scene_name)
+
+            most_recent_event = current_event
 
         if prev_event != current_event:
             frames = 0
