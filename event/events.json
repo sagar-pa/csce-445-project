@@ -417,7 +417,7 @@
     },
     {
         "id": 56,
-        "dialogue": "You: Hello, Ambassador Pike. I'm Saito, the detective investigating the unfortunate Japanese Ambassador's death. I was just going through the list of the people who attended his party. Could I ask you some questions?",
+        "dialogue": "You: Hello, Ambassador Pike. I'm Sades, the detective investigating the unfortunate Japanese Ambassador's death. I was just going through the list of the people who attended his party. Could I ask you some questions?",
         "text_only": false,
         "trigger": 57
     },
@@ -616,7 +616,7 @@
     },
     {
         "id": 84,
-        "dialogue": "You: Hello. I'm Saito, a detective working under the Mr. Aosa. I regrettably have some bad news to deliver if you'll allow me to do so.",
+        "dialogue": "You: Hello. I'm Sades, a detective working under the Mr. Aosa. I regrettably have some bad news to deliver if you'll allow me to do so.",
         "text_only": false,
         "trigger": 85
     },
