@@ -88,7 +88,7 @@
     {
         "id": 12,
         "dialogue": "The Ambassador as you know, was a key figure in the recent victory in Manchuria and continued control of Korea. However, he was also the one responsible for stopping further invasions and had connections to the Chinese governments. Too controlled for his own good, you know he was a target of all the parties he worked with.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 18
     },
     {
@@ -140,67 +140,68 @@
         "id": 18,
         "dialogue": "Rei: Here the suspicious individuals we have identified so far.",
         "trigger": 19,
-        "text_only": true
+        "teleport_to": [1260, 250],
+        "text_only": false
     },
     {
         "id": 19,
         "dialogue": "Hashida Makoto: Foolish would be a fitting word to describe Hashida, a man who obeys his orders but is excessively aggressive and nationalistic. He doesn’t like the Chinese and the Koreans and believes in the Japanese government’s fairness and rights.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 20
     },
     {
         "id": 20,
         "dialogue": "Jeremy Pike: The American ambassador, who has military experience, is extremely hard to figure out.  He doesn't seem to think highly of the emperor, and is just in Japan to maintain relations.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 21
     },
     {
         "id": 21,
         "dialogue": "Yuki Kumamoto: An old, graceful woman, who exudes confidence and poise.  She owns an inn that she runs most of the day.  Originally of Chinese descent, she was adopted by her late husband's father for political status but hasn't been an active Japanese national in the nation's politics.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 22
     },
     {
         "id": 22,
         "dialogue": "You to Rei: Have you identified the poison that was found on the body?",
-        "text_only": true,
+        "text_only": false,
         "trigger": 23
     },
     {
         "id": 23,
         "dialogue": "Rei: Yes, it was a slow acting one and seems to be fresh. I believe it could have been applied between 14-16 hours ago, during the beginning of the party.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 24
     },
     {
         "id": 24,
         "dialogue": "You to Rei: Which one of the suspects do you think it is?",
-        "text_only": true,
+        "text_only": false,
         "trigger": 25
     },
     {
         "id": 25,
         "dialogue": "Rei: It could be all of them, but I personally believe that the American Ambassador was responsible because America doesn't like the Empire expanding to towards the West.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 26 
     },
     {
         "id": 26,
         "dialogue": "You to Rei: It seems that whoever did it left the party normally like everyone else.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 27,
         "clues_necessary": [2, 3]
     },
     {
         "id": 27,
         "dialogue": "Rei: They must be an important and intelligent person.",
-        "text_only": true,
+        "text_only": false,
         "trigger": 28,
         "clues_necessary": [2, 3]
     },
     {
         "id": 28,
-        "dialogue": "You to the guard who oversaw the house: Can you tell me who came in before 4 P.M to the party?",
+        "dialogue": "You leave and ask the guard who oversaw the house: Can you tell me who came in before 4 P.M to the party?",
         "text_only": true,
         "trigger": 29,
         "clues_necessary": [1, 3, 4]
@@ -774,6 +775,7 @@
                 "trigger": 106
             }
         ],
+        "trigger": 106,
         "clues_necessary": [9, 11, 12],
         "text_only": false,
         "dialogue": "You: Any political power you doubt that played this?"
@@ -818,6 +820,7 @@
                 "trigger": 110
             }
         ],
+        "trigger": 110,
         "text_only": false,
         "dialogue": "You: Any particular guests that seemed involved?"
     },
@@ -839,6 +842,7 @@
                 "trigger": 112
             }
         ],
+        "trigger": 112,
         "clues_necessary": [9, 11, 12],
         "text_only": false,
         "dialogue": "You: You were one of the few early at the party. Do you remember how things progressed in the beginning?"
@@ -1314,7 +1318,7 @@
         "trigger": 172
     },
     {
-        "id": 171,
+        "id": 172,
         "text_only": true,
         "dialogue": "Hashida shoots and kills you.",
         "game_over": true
