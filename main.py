@@ -97,9 +97,6 @@ def move_character(events, current_event, characters):
 
     return current_event
 
-def get_scene_name(event_id, events):
-    return get_profile()['scene_name']
-
 def get_done_collecting_clues_event(events, scene_name):
     for e in events:
         if e.trigger_on_done and e.scene == scene_name:
@@ -131,12 +128,11 @@ def control_selection(key, events, current_event):
 
     return current_event
 
-def load_new_scene(current_event, events, characters):
-    scene_name = get_scene_name(current_event.id, events)
+def load_new_scene(scene_name, characters):
     scene_image = pygame.image.load(config.SCENES[scene_name])
     for c in characters:
         c.boundaries_image_filename = config.SCENES[scene_name].replace('.png', '-boundaries.png')
-    return scene_name, scene_image
+    return scene_image
 
 def run():
     # setup pygame
@@ -159,7 +155,8 @@ def run():
     characters = [sades, rei]
     main_character = [c for c in characters if c.main_character == True][0]
 
-    scene_name, scene_image = load_new_scene(current_event, events, characters)
+    scene_name = profile['scene_name']
+    scene_image = load_new_scene(scene_name, characters)
 
     # setup boundaries
     create_boundaries()
@@ -233,12 +230,13 @@ def run():
 
             current_event.blit_dialogue(top=current_event.text_only)
 
-        if current_event and current_event.load_scene:
+        if current_event and current_event.load_scene and scene_name != current_event.load_scene:
             scene_name = current_event.load_scene
-            _, scene_image = load_new_scene(current_event, events, characters)
+            scene_image = load_new_scene(scene_name, characters)
 
         if current_event and current_event.teleport_to:
             sades.x, sades.y = current_event.teleport_to
+            sades.direction = 'up'
 
         if prev_event != current_event:
             frames = 0

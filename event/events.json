@@ -95,7 +95,6 @@
         "id": 13,
         "dialogue": "Are you sure you're done collecting clues?",
         "trigger_on_done": true,
-        "scene": "crime-scene",
         "options": [
             {
                 "text": "Yes",
@@ -106,6 +105,7 @@
                 "trigger": -1
             }
         ],
+        "scene": "crime-scene",
         "text_only": true
     },
     {
@@ -254,7 +254,7 @@
         "dialogue": "Rei: Let's see the matter through.",
         "text_only": true,
         "load_scene": "inn",
-        "trigger": 34
+        "trigger": 79
     },
     {
         "id": 34,
@@ -386,11 +386,27 @@
         "text_only": false
     },
     {
+        "id": 95,
+        "dialogue": "Are you sure you're done collecting clues?",
+        "trigger_on_done": true,
+        "options": [
+            {
+                "text": "Yes",
+                "trigger": 53
+            },
+            {
+                "text": "No",
+                "trigger": -1
+            }
+        ],
+        "scene": "embassy",
+        "text_only": true
+    },
+    {
         "id": 53,
         "dialogue": "You rush back to not raise suspiscion about your whereabouts.",
         "text_only": true,
         "trigger": 54,
-        "trigger_on_done": true,
         "scene": "embassy"
     },
     {
@@ -557,5 +573,238 @@
         "dialogue": "You: While it could be him, it'd be very convenient if it wasn't. I'm not even sure if pursuing him would be worth the effects of a degraded relationship with America.",
         "text_only": true,
         "trigger": 30
+    },
+    {
+        "id": 79,
+        "dialogue": "You think of the reasons why Yuki might do something like this.",
+        "text_only": true,
+        "trigger": 80
+    },
+    {
+        "id": 80,
+        "dialogue": "Yuki doesn't seem like the type to do something like this, she's sweet, intelligent and confident.  But, it's hard to ignore the bold letters that say 'Chinese' on her Japanese passport.",
+        "text_only": true,
+        "trigger": 81
+    },
+    {
+        "id": 81,
+        "dialogue": "You decide to investigate further and head to the Inn.",
+        "text_only": true,
+        "trigger": 82
+    },
+    {
+        "id": 82,
+        "dialogue": "You make your way to the Inn, and you are surprised to see a massive building and are even more impressed with Yuki, seeing as she does nearly everything at the Inn, obviously with a few helpers. Maybe she is capable of executing a plan like the murder.",
+        "teleport_to": [830, 1340],
+        "text_only": false,
+        "trigger": 83
+    },
+    {
+        "id": 83,
+        "dialogue": "You introduce yourself.",
+        "text_only": false,
+        "trigger": 84
+    },
+    {
+        "id": 84,
+        "dialogue": "You: Hello. I'm Saito, a detective working under the Mr. Aosa. I regrettably have some bad news to deliver if you'll allow me to do so.",
+        "text_only": false,
+        "trigger": 85
+    },
+    {
+        "id": 85,
+        "dialogue": "Yuki: What is the matter?.",
+        "text_only": false,
+        "trigger": 86
+    },
+    {
+        "id": 86,
+        "dialogue": "You: I must say with a heavy hearth that the Ambassador has passed away, and I'm investigating his death as a murder case.",
+        "text_only": false,
+        "trigger": 87
+    },
+    {
+        "id": 87,
+        "dialogue": "Yuki: [expressionlessly] That is regrettable. I'll try my best to assist you. However, because it's gotten to late, I recommend you stay the night. I'll provide for your stay tonight.",
+        "text_only": false,
+        "trigger": 88
+    },
+    {
+        "id": 88,
+        "dialogue": "You: Go to your room and get a little bit of sleep to sober up.",
+        "text_only": true,
+        "trigger": 89
+    },
+    {
+        "id": 89,
+        "dialogue": "You eventually go to your room, and get a few hours of sleep. You wake up, and silently walk around the Inn.  Some of the people you were with last night are drunk and singing loudly. You smile, and you decide to look around.",
+        "text_only": true,
+        "trigger": 90
+    },
+    {
+        "id": 90,
+        "dialogue": "Investigate Crime Scene, 4 clues to collect.",
+        "teleport_to": [240, 270],
+        "text_only": false
+    },
+    {
+        "id": 91,
+        "dialogue": "Even for someone who was the daughter-in-law of a rich property owner, this pottery seemed too expensive to possess.",
+        "clue": [720, 623, 48, 52],
+        "clue_id": 9,
+        "text_only": false
+    },
+    {
+        "id": 92,
+        "dialogue": "Revealing Yuki's close connection to her hometown, this telegram was definitely unexpected to find from someone so integrated into the Japanese society.",
+        "clue": [822, 337, 50, 90],
+        "clue_id": 10,
+        "text_only": false
+    },
+    {
+        "id": 93,
+        "dialogue": "Even though it only revealed their name ones, it doesn't count out the possibility that these two had stayed the previous weeks too.",
+        "clue": [1250, 1250, 47, 47],
+        "clue_id": 11,
+        "text_only": false
+    },
+    {
+        "id": 94,
+        "dialogue": "The document listed very powerful high ranking officials, and even had names of politicians involved in the latest conflict with Manchuria.",
+        "clue": [577, 290, 47, 47],
+        "clue_id": 12,
+        "text_only": false
+    },
+    {
+        "id": 96,
+        "dialogue": "Are you sure you're done collecting clues?",
+        "trigger_on_done": true,
+        "options": [
+            {
+                "text": "Yes",
+                "trigger": 97
+            },
+            {
+                "text": "No",
+                "trigger": -1
+            }
+        ],
+        "scene": "inn",
+        "text_only": true
+    },
+    {
+        "id": 97,
+        "dialogue": "You head back to your room, and you fall asleep. The next morning, you are fresh and ready to ask Yuki questions.",
+        "trigger": 98,
+        "text_only": true
+    },
+    {
+        "id": 98,
+        "teleport_to": [830, 1340],
+        "trigger": 99,
+        "text_only": false,
+        "dialogue": "You see Yuki, and tell her how much you enjoyed last night, and how relaxed and clear-minded you feel."
+    },
+    {
+        "id": 99,
+        "trigger": 100,
+        "text_only": false,
+        "dialogue": "You: Good morning Yuki, I had a great time last night.  I enjoyed the company here, and I would definitely stay again if I need to relax.  With that being said, could I ask you a couple of questions now? "
+    },
+    {
+        "id": 100,
+        "trigger": 101,
+        "text_only": false,
+        "dialogue": "You: How have your relatives been (in China)?"
+    },
+    {
+        "id": 101,
+        "trigger": 102,
+        "text_only": false,
+        "dialogue": "Yuki: I don't maintain as good a connection as I ought to, but they've been well as of the last time I wrote to them."
+    },
+    {
+        "id": 102,
+        "trigger": 103,
+        "text_only": false,
+        "dialogue": "You: How involved were you with the Ambassador's politics?"
+    },
+    {
+        "id": 103,
+        "trigger": 104,
+        "text_only": false,
+        "dialogue": "Yuki: Not very much, but I could tell you about a few select things."
+    },
+    {
+        "id": 104,
+        "trigger": 105,
+        "clues_necessary": [9, 11, 12],
+        "text_only": false,
+        "dialogue": "You: Any political power you doubt that played this?"
+    },
+    {
+        "id": 105,
+        "trigger": 106,
+        "clues_necessary": [9, 11, 12],
+        "text_only": false,
+        "dialogue": "Yuki: The Americans seem to have grown tensions with the Japanese government it seems from their recent condemnation of Japanese expansion. "
+    },
+    {
+        "id": 106,
+        "trigger": 107,
+        "text_only": false,
+        "dialogue": "You: Did you notice someone unusually close to the Ambassador at the party?"
+    },
+    {
+        "id": 107,
+        "trigger": 108,
+        "text_only": false,
+        "dialogue": "Yuki: Nobody in particular, besides Investigator Rei and Hashida."
+    },
+    {
+        "id": 108,
+        "clues_necessary": [9, 11],
+        "trigger": 109,
+        "text_only": false,
+        "dialogue": "You: Any particular guests that seemed involved?"
+    },
+    {
+        "id": 109,
+        "clues_necessary": [9, 11],
+        "trigger": 110,
+        "text_only": false,
+        "dialogue": "Yuki: I'm sorry. I can't disclose any information about my guests."
+    },
+    {
+        "id": 110,
+        "clues_necessary": [9, 11, 12],
+        "trigger": 111,
+        "text_only": false,
+        "dialogue": "You: You were one of the few early at the party. Do you remember how things progressed in the beginning?"
+    },
+    {
+        "id": 111,
+        "clues_necessary": [9, 11, 12],
+        "trigger": 112,
+        "text_only": false,
+        "dialogue": "Yuki: In the beginning it was mostly just the ambassador conversing with Rei and Hashida about political matters. I bothered not to join them."
+    },
+    {
+        "id": 112,
+        "trigger": 113,
+        "text_only": false,
+        "dialogue": "You thank Yuki."
+    },
+    {
+        "id": 113,
+        "trigger": 114,
+        "text_only": false,
+        "dialogue": "You: That's all I need from you, thank you so much for your hospitality, and I know we'll get to the bottom of this."
+    },
+    {
+        "id": 114,
+        "trigger": 30,
+        "text_only": false,
+        "dialogue": "You leave the Inn."
     }
 ]

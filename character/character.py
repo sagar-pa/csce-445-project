@@ -127,15 +127,15 @@ class Character:
 
         if self.direction == 'up':
             x_offset = self.width / 2
-            y_offset = -5
+            y_offset = -10
         elif self.direction == 'down':
             x_offset = self.width / 2
-            y_offset = 5 + self.height
+            y_offset = 10 + self.height
         elif self.direction == 'right':
-            x_offset = 5 + self.width
+            x_offset = 10 + self.width
             y_offset = self.height / 2
         elif self.direction == 'left':
-            x_offset = -5
+            x_offset = -10
             y_offset = self.height / 2
 
         clue_blob = self.is_clue_location(self.x + x_offset, self.y + y_offset)
