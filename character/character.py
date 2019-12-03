@@ -121,7 +121,6 @@ class Character:
 
         for scene in scene_to_clue_dict:
             if any(clue_id == i for i in scene_to_clue_dict[scene]):
-                print scene
                 return scene
 
     def __eq__(self, other):
@@ -138,7 +137,6 @@ class Character:
             for j in range(y, y + self.height, self.height / 5):
                 for clue in Character.clues:
                     if Coordinate(i, j) in clue.clue_blob and scene_name == clue.clue_scene:
-                        print clue.clue_id, clue.clue_scene
                         return clue.clue_id
 
         return None
